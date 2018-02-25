@@ -1,0 +1,34 @@
+{
+  "bin": {
+    "wp2fb": "./bin/wp2fb.js"
+  },
+  "name": "@foxzilla/wordpress-helper",
+  "version": "0.0.1-alpha.3",
+  "description": "Porting your data to FireBlog from Wordpress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoXZilla/wordpress-helper.git"
+  },
+  "keywords": [
+    "FireBlog",
+    "Wordpress"
+  ],
+  "author": "FoXZilla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FoXZilla/wordpress-helper/issues"
+  },
+  "homepage": "https://github.com/FoXZilla/wordpress-helper#readme",
+  "devDependencies": {
+    "@types/node": "^9.4.6"
+  },
+  "dependencies": {
+    "@foxzilla/fireblog": "0.0.1-alpha.10",
+    "commander": "^2.14.1",
+    "xml2js": "^0.4.19"
+  }
+}
