@@ -7,14 +7,14 @@ Porting your data to FireBlog from Wordpress.
 Export the `.xml` file from Wordpress first, then ues this to translate that to FireBlogData.
 
 ```
-npm install -g wordpress-helper
+npm install -g @foxzilla/wordpress-helper
 wp2fb "export.from.wordpress.xml" --out "out.fb.json"
 ```
 
 # Example
 
 ```
-npm install -g wordpress-helper
+npm install -g @foxzilla/wordpress-helper
 wp2fb pea.wordpress.2018-02-20.xml --out out.fb.json
 ```
 
