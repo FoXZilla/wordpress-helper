@@ -13,6 +13,7 @@ export default async function parse(path:string):Promise<FireBlogData>{
         publish :ArticleStatus.Publish,
         trash   :ArticleStatus.Trash,
         private :ArticleStatus.Private,
+        draft   :ArticleStatus.Draft,
     };
     const RawData:any =await new Promise(r=>xml2js(Fs.readFileSync(path),(e:Error,d:any)=>r(d)));
     const {

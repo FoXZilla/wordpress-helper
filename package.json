@@ -3,7 +3,7 @@
     "wp2fb": "./bin/wp2fb.js"
   },
   "name": "@foxzilla/wordpress-helper",
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.5",
   "description": "Porting your data to FireBlog from Wordpress.",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "@types/node": "^9.4.6"
   },
   "dependencies": {
-    "@foxzilla/fireblog": "0.0.1-alpha.10",
+    "@foxzilla/fireblog": "0.0.1-alpha.15",
     "commander": "^2.14.1",
     "xml2js": "^0.4.19"
   }
