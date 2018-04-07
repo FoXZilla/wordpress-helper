@@ -1,6 +1,7 @@
 import {ArticleStatus, FireBlogData} from "@foxzilla/fireblog";
 import {doThatOr} from "./pea-script";
 import {toIOSDate} from './common';
+import formatConent from './format-content';
 
 const Path =require('path');
 const Fs =require('fs');
@@ -54,7 +55,7 @@ export default async function parse(path:string):Promise<FireBlogData>{
                 Article.push({
                     id             :doThatOr(item['wp:post_id'],v=>+v[0],0),
                     title          :doThatOr(item['title'],v=>v[0]),
-                    description    :doThatOr(item['description'],v=>v[0]),
+                    description    :doThatOr(item['excerpt:encoded'],v=>v[0]),
                     state          :doThatOr(item['wp:status'],v=>StateMap[v[0]]),
                     tag_list       :doThatOr(item['category'],v=>v.filter((i:any)=>i.$.domain==='post_tag').map((i:any)=>i.$.nicename)),
                     category_list  :doThatOr(item['category'],v=>v.filter((i:any)=>i.$.domain==='category').map((i:any)=>i.$.nicename)),
@@ -65,7 +66,7 @@ export default async function parse(path:string):Promise<FireBlogData>{
                         v=>doThatOr(v.find((i:any)=>i['wp:meta_key'][0]==='post_views_count'),i=>+i['wp:meta_value'][0],0),
                         0,
                     ),
-                    md_content     :doThatOr(item['content:encoded'],v=>v[0]),
+                    md_content     :formatConent(doThatOr(item['content:encoded'],v=>v[0])),
                     meta :{
                         no_comment :doThatOr(item['content:comment_status'],v=>v[0]!=='open',false)!,
                         password   :doThatOr(item['wp:post_password'],v=>v[0]),
