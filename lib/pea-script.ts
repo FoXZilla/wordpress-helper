@@ -10,7 +10,7 @@ export function getRandomChar(len:number):string{
 
 export function Assert<T>(val:T){return val};
 
-export function doThatOr<T,U,E=null>(it:T, that:(it:T)=>U, or:E|null=null):U|E{
+export function doThatOr<T,U,E=null>(it:T, that:(it:T)=>U, or?:E|null):U|E{
     if(it)return that(it);
     else  return or as E;
 }

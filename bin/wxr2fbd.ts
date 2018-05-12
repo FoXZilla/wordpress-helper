@@ -22,10 +22,13 @@ FireBlog v${require('@foxzilla/fireblog/package.json').version}\
 - Category: ${fbData.data.category.length}
 - Tag: ${fbData.data.tag.length}\
 `);
-        var outPath =Path.resolve(options.out||`./${new Date().getTime()}.fd.json`);
+        var outPath =Path.resolve(options.out||`./${new Date().getTime()}.fbd.json`);
         Fs.writeFileSync(outPath,JSON.stringify(fbData,null,'  '));
         console.log(`output to ${outPath}`);
     })
 ;
 
 program.parse(process.argv);
+process.on('unhandledRejection', function(e){
+    console.error(e);
+});

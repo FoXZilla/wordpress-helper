@@ -62,4 +62,5 @@ typings/
 
 # test data
 *.fb.json
+*.fbd.json
 *.wordpress.*.xml
